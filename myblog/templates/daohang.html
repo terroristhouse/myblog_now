@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="navbar">
+    <a href="{% url 'index/' %}" class="navbar-brand px-5"><b><i>刘飞</i></b><small>&nbsp;个人站点</small></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ml-5" id="navbarContent">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 nav-list">
+            <li class="nav-item">
+
+                {% if request.path == '/' %}
+                    <a href="{% url 'index/' %}" class="nav-link active">首页</a>
+                {% else %}
+                    <a href="{% url 'index/' %}" class="nav-link">首页</a>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                {% if 'crawl' in request.path %}
+                    <a href="{% url 'index/' %}crawl-1.html" class="nav-link active">Python爬虫</a>
+                {% else %}
+                    <a href="{% url 'index/' %}crawl-1.html" class="nav-link">Python爬虫</a>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                {% if 'data' in request.path %}
+                    <a href="{% url 'data/' %}" class="nav-link active">Python数据分析</a>
+                {% else %}
+                    <a href="{% url 'data/' %}" class="nav-link">Python数据分析</a>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                {% if 'dream' in request.path %}
+                    <a href="{% url 'dream/' %}" class="nav-link active">励志名言</a>
+                {% else %}
+                    <a href="{% url 'dream/' %}" class="nav-link">励志名言</a>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                <a href="javascript:;" class="nav-link">给我留言</a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:;" class="nav-link">关于本站</a>
+            </li>
+        </ul>
+        <div class="d-flex justify-content-end mr-3 mt-1">
+            <div class="collapse" id="collapseExample">
+                <div class="form-group form-inline">
+                    <input type="search" class="form-control mr-2"><a href="#" class="btn btn-success">搜索</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="#" class="sousuo" data-toggle="collapse" data-target="#collapseExample"><i
+                    class="fa fa-search"></i></a>
+        </div>
+        <div class="px-5 iconColor">
+            <a href="#"><i class="fa fa-weixin"></i></a>
+            <a href="#"><i class="fa fa-qq"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,157 @@
+/*去除自带标头*/
+ul {
+    list-style-type: none;
+}
+
+/*a链接鼠标滑过*/
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+/*a链接默认*/
+a {
+    color: #000000;
+}
+
+@media (max-width: 992px) {
+    /*    在小屏设备中，设置外边距，上下边距为1rem，左右为0*/
+    .left {
+        margin: 1rem 0;
+    }
+}
+
+@media (min-width: 992px) {
+    /*    在大屏设备中，左侧导航设置固定定位，右侧主体内容设置左外边距25%*/
+    .left {
+        position: fixed;
+        top: 50px;
+        left: 0;
+    }
+
+    .right {
+        margin-left: 25%;
+    }
+}
+
+/*导航栏设置高度和阴影*/
+#navbar {
+    height: 60px;
+    box-shadow: 0 1px 10px red;
+}
+
+/*下面内容与导航分开*/
+.list {
+    height: 50px;
+}
+
+/*导航内容设置左外边距10px*/
+.nav_list li {
+    margin-left: 10px;
+}
+
+/*导航内容鼠标滑过效果*/
+.nav-list li:hover {
+    border-bottom: 2px solid white;
+}
+
+/*导航右侧图标颜色*/
+.iconColor a {
+    color: white;
+}
+
+/*导航右侧图标鼠标滑过效果*/
+.iconColor a:hover i {
+    color: red;
+    transform: scale(1.5);
+}
+
+/*选中的效果*/
+.active {
+    border-bottom: 2px solid red;
+}
+
+/*网站logo鼠标滑过效果*/
+.navbar-brand:hover {
+    transform: scale(1.5);
+}
+
+/*左侧内容设置右边框*/
+.left {
+    border-right: 2px solid #eeeeee;
+}
+
+/*左侧内容a链接默认*/
+.left a {
+    font-weight: bold;
+    color: #000;
+}
+
+/*搜索图标*/
+.sousuo i {
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/*搜索图标鼠标滑过时*/
+.sousuo i:hover {
+    background: #00aa88;
+    color: white;
+}
+
+/*轮播图高度*/
+.carousel-item img {
+    height: 350px;
+}
+
+/*轮播图图标设为圆点*/
+#carouselExampleControls ol li {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+/*文章中时间，作者，阅读量等浮动*/
+.right1 li {
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+/*鼠标滑过文章效果*/
+.list-unstyled li:hover {
+    transform: scale(1.01);
+    border-left: solid 2px #3C3C3C;
+    transition: 0.2s;
+}
+
+/*标签云图标*/
+.bqy {
+    background: #00aa88;
+    width: 60px;
+    border-radius: 5px;
+    text-align: center;
+}
+/*标签云字体大小*/
+.badge{
+    font-size: 13px;
+}
+/*python爬虫三级菜单边框圆角*/
+.color-crawl{
+    /*background: #a71d2a;*/
+    border-radius: 20px;
+}
+/*面包屑导航分隔符*/
+.breadcrumb-item + .breadcrumb-item::before{
+            display: inline-block;
+            padding-right: 0.5rem;
+            color: #6c757d;
+            content: '>';
+        }
+/*文章详情页标签，作者，时间，分类等*/
+.left1 li{
+    float: left;
+    margin-left: 10px;
+}

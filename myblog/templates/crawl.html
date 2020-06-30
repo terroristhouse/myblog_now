@@ -1,0 +1,426 @@
+{% extends 'base.html' %}
+{% block head-title %}
+    <title>刘飞个人站点-Python爬虫</title>
+{% endblock %}
+{#左侧导航#}
+{% block left %}
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-5" id="navbarContent1">
+            <ul class="navbar-nav flex-column mr-auto mt-2 mt-lg-0 nav-list">
+                <li class="nav-item">
+                    {% if '1' in request.path %}
+                        <a href="{% url 'index/' %}crawl-1.html" class="nav-link active">PC端</a>
+                    {% else %}
+                        <a href="{% url 'index/' %}crawl-1.html" class="nav-link">PC端</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    {% if '2' in request.path %}
+                        <a href="{% url 'index/' %}crawl-2.html" class="nav-link active">手机端</a>
+                    {% else %}
+                        <a href="{% url 'index/' %}crawl-2.html" class="nav-link">手机端</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    {% if '3' in request.path %}
+                        <a href="{% url 'index/' %}crawl-3.html" class="nav-link active">整站</a>
+                    {% else %}
+                        <a href="{% url 'index/' %}crawl-3.html" class="nav-link">整站</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+{#中间导航#}
+{% block lunbo %}
+    {% block crawl-title %}
+        {% if '1' in request.path %}
+            <h6 class="font-italic font-weight-bold">PC端网站&nbsp;&nbsp;<i class="fa fa-laptop text-success"
+                                                                         aria-hidden="true"></i></h6>
+        {% elif '2' in request.path %}
+            <h6 class="font-italic font-weight-bold">手机端网站&nbsp;&nbsp;<i class="fa fa-android text-success"
+                                                                         aria-hidden="true"></i></h6>
+        {% elif '3' in request.path %}
+            <h6 class="font-italic font-weight-bold">整站爬取&nbsp;&nbsp;<i class="fa fa-sitemap text-success"
+                                                                        aria-hidden="true"></i></h6>
+        {% endif %}
+    {% endblock %}
+
+    <div class="my-3 p-2 color-crawl border border-danger">
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+        <a href="javascript:;" class="badge badge-pill badge-danger p-2 my-1 text-center border border-primary">人民日报</a>
+    </div>
+{% endblock %}
+{#热门文章#}
+{% block remen %}
+
+{% endblock %}
+{# 文章列表 #}
+{% block center_list %}
+    <h6 class="mt-4 font-italic font-weight-bolder">最新文章&nbsp;&nbsp;<span
+            class="fa fa-fire text-primary"></span></h6>
+    <hr>
+    <ul class="list-unstyled mt-3">
+        <li class="media mb-4 border-bottom">
+            <img width="100"
+                 src="/static/image/libai.jpg"
+                 alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="{% url 'index/' %}article_detail-1.html"
+                                         class="font-weight-bold title"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：李白</a></h6>
+                <p><a href="{% url 'index/' %}article_detail-1.html"
+                      class="text-dark">李白诗歌的语言，有的清新如同口语，有的豪放，不拘声律，近于散文，但都统一在“清水出芙蓉，天然去雕饰”的自然美之中。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            {#                        <img width="100" src="/static/image/dufu.jpg" alt="" class="mr-3">#}
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：杜甫</a></h6>
+                <p><a href="javascript:;" class="text-dark">在杜甫中年因其诗风沉郁顿挫，忧国忧民，杜甫的诗被称为“诗史”。他的诗词以古体，律诗见长，风格多样，以“沉郁顿挫”四字准确概括出他自己的作品风格，而以沉郁为主。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100" src="/static/image/liqingzhao.jpg" alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;宋代词人：李清照</a></h6>
+                <p><a href="javascript:;" class="text-dark">李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。所作词，前期多写悠闲生活，后期多悲叹身世，情调伤感。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100"
+                 src="/static/image/libai.jpg"
+                 alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold title"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：李白</a></h6>
+                <p><a href="javascript:;"
+                      class="text-dark">李白诗歌的语言，有的清新如同口语，有的豪放，不拘声律，近于散文，但都统一在“清水出芙蓉，天然去雕饰”的自然美之中。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            {#                        <img width="100" src="/static/image/dufu.jpg" alt="" class="mr-3">#}
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：杜甫</a></h6>
+                <p><a href="javascript:;" class="text-dark">在杜甫中年因其诗风沉郁顿挫，忧国忧民，杜甫的诗被称为“诗史”。他的诗词以古体，律诗见长，风格多样，以“沉郁顿挫”四字准确概括出他自己的作品风格，而以沉郁为主。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100" src="/static/image/liqingzhao.jpg" alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;宋代词人：李清照</a></h6>
+                <p><a href="javascript:;" class="text-dark">李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。所作词，前期多写悠闲生活，后期多悲叹身世，情调伤感。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100"
+                 src="/static/image/libai.jpg"
+                 alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold title"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：李白</a></h6>
+                <p><a href="javascript:;"
+                      class="text-dark">李白诗歌的语言，有的清新如同口语，有的豪放，不拘声律，近于散文，但都统一在“清水出芙蓉，天然去雕饰”的自然美之中。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            {#                        <img width="100" src="/static/image/dufu.jpg" alt="" class="mr-3">#}
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：杜甫</a></h6>
+                <p><a href="javascript:;" class="text-dark">在杜甫中年因其诗风沉郁顿挫，忧国忧民，杜甫的诗被称为“诗史”。他的诗词以古体，律诗见长，风格多样，以“沉郁顿挫”四字准确概括出他自己的作品风格，而以沉郁为主。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100" src="/static/image/liqingzhao.jpg" alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;宋代词人：李清照</a></h6>
+                <p><a href="javascript:;" class="text-dark">李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。所作词，前期多写悠闲生活，后期多悲叹身世，情调伤感。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100"
+                 src="/static/image/libai.jpg"
+                 alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold title"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：李白</a></h6>
+                <p><a href="javascript:;"
+                      class="text-dark">李白诗歌的语言，有的清新如同口语，有的豪放，不拘声律，近于散文，但都统一在“清水出芙蓉，天然去雕饰”的自然美之中。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            {#                        <img width="100" src="/static/image/dufu.jpg" alt="" class="mr-3">#}
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：杜甫</a></h6>
+                <p><a href="javascript:;" class="text-dark">在杜甫中年因其诗风沉郁顿挫，忧国忧民，杜甫的诗被称为“诗史”。他的诗词以古体，律诗见长，风格多样，以“沉郁顿挫”四字准确概括出他自己的作品风格，而以沉郁为主。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100" src="/static/image/liqingzhao.jpg" alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;宋代词人：李清照</a></h6>
+                <p><a href="javascript:;" class="text-dark">李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。所作词，前期多写悠闲生活，后期多悲叹身世，情调伤感。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100"
+                 src="/static/image/libai.jpg"
+                 alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold title"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：李白</a></h6>
+                <p><a href="javascript:;"
+                      class="text-dark">李白诗歌的语言，有的清新如同口语，有的豪放，不拘声律，近于散文，但都统一在“清水出芙蓉，天然去雕饰”的自然美之中。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            {#                        <img width="100" src="/static/image/dufu.jpg" alt="" class="mr-3">#}
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：杜甫</a></h6>
+                <p><a href="javascript:;" class="text-dark">在杜甫中年因其诗风沉郁顿挫，忧国忧民，杜甫的诗被称为“诗史”。他的诗词以古体，律诗见长，风格多样，以“沉郁顿挫”四字准确概括出他自己的作品风格，而以沉郁为主。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100" src="/static/image/liqingzhao.jpg" alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;宋代词人：李清照</a></h6>
+                <p><a href="javascript:;" class="text-dark">李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。所作词，前期多写悠闲生活，后期多悲叹身世，情调伤感。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100"
+                 src="/static/image/libai.jpg"
+                 alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold title"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：李白</a></h6>
+                <p><a href="javascript:;"
+                      class="text-dark">李白诗歌的语言，有的清新如同口语，有的豪放，不拘声律，近于散文，但都统一在“清水出芙蓉，天然去雕饰”的自然美之中。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            {#                        <img width="100" src="/static/image/dufu.jpg" alt="" class="mr-3">#}
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;唐代诗人：杜甫</a></h6>
+                <p><a href="javascript:;" class="text-dark">在杜甫中年因其诗风沉郁顿挫，忧国忧民，杜甫的诗被称为“诗史”。他的诗词以古体，律诗见长，风格多样，以“沉郁顿挫”四字准确概括出他自己的作品风格，而以沉郁为主。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="media mb-4 border-bottom">
+            <img width="100" src="/static/image/liqingzhao.jpg" alt="" class="mr-3">
+            <div class="media-body">
+                <h6 class="mt-0 mb-2"><a href="javascript:;" class="font-weight-bold"><i
+                        class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;宋代词人：李清照</a></h6>
+                <p><a href="javascript:;" class="text-dark">李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。所作词，前期多写悠闲生活，后期多悲叹身世，情调伤感。</a>
+                </p>
+                <br>
+                <ul class="right1">
+                    <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+                    <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+                    <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+                    <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                                class="text-success">人民日报</a></small></i>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+{% endblock %}

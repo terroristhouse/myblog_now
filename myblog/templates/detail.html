@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block head-title %}
+    <title>详情页</title>
+{% endblock %}
+{#重写轮播模块#}
+{% block lunbo %}
+    <nav aria-label="breadcrumb">
+        <h6 class="font-italic font-weight-bold">您的位置:</h6>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'index/' %}" class="text-primary">首页</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'index/' %}crawl-1.html" class="text-primary">列表页</a></li>
+            <li class="breadcrumb-item"><a href="javascript:;" class="disabled">详情页</a></li>
+        </ol>
+    </nav>
+{% endblock %}
+{#重写热门文章模块#}
+{% block remen %}
+
+{% endblock %}
+{# 重写文章列表模块 #}
+{% block center_list %}
+    <h5 class="text-center my-3">文章标题</h5>
+    <ul class="left1">
+        <li><i class="fa fa-tag" aria-hidden="true">&nbsp;<small><a href="javascript:;"
+                                                                    class="text-success">人民日报</a></small></i>
+        </li>
+        <li><i class="fa fa-user-circle">&nbsp;<small>刘飞</small></i></li>
+        <li><i class="fa fa-eye"></i>&nbsp;<small>100</small></li>
+        <li><i class="fa fa-calendar"></i>&nbsp;<small>2020-06-29</small></li>
+    </ul>
+    <br>
+    <p class="p-4">　　W3C 计划制定的标准将支持目前现存及即将问世的诸多支付方式，其中包括借记卡支付、信用卡支付、移动支付系统、代管账户支付、比特币支付以及其他分布式分账类
+        技术。相关支付API将支持浏览器辅助实现的支付工具注册及选择等功能，并为自动安全支付，特别是移动设备端的自动安全支付建立良好的基础，从而为广大商 家和用户带来更安全的交易平台以及更多的支付方式选择。
+
+        W3C CEO Jaffe博士评论说，“行业将电子钱包视为一种可以改善支付安全和可用性，并多种营销手段的支付解决方案。然而，用户并没有完全接受这一方案。我们认为
+        其中的一个原因是电子钱包市场的分裂性，以及电子钱包提供商使用不兼容的编程接口造成的。W3C即将编写的标准将通过定义标准化的编程接口帮助确保不同支
+        付方案的互操作性。所以，当你购买商品的时候，你应该有一个标准的方法来使自己的支付工具和商家可接受的工具相匹配，并确保二者能够与商家的结账流程平滑整合。”
+
+        W3C新启动的Web支付工作组章程（及常见问题解答）由W3C
+        Web支付兴趣组完成，该兴趣组成员来自银行、支付服务提供商、商家、浏览器厂商、硬件厂商以及其他行业相关方。新的Web支付工作组将于2015年10月26日-30日在日本札幌举办的W3C全体技术大会期间举办第一次小组会议。
+
+        更多关于W3C Web支付工作组的信息请见新闻通稿（英文版）（中文版）。</p>
+    <br>
+    <div class="text-center">
+        <img src="/static/image/liqingzhao.jpg" alt="" class="img-fluid mt-2">
+    </div>
+    <div class="clearfix mb-5 font-weight-bold">
+        <ul class="left1">
+            <li><a href="javascript:;"><i class="fa fa-hand-o-left text-muted" aria-hidden="true">上一篇&nbsp;&nbsp;</i>上一篇文章</a></li>
+        </ul>
+        <ul class="right1">
+            <li><a href="javascript:;">下一篇文章&nbsp;&nbsp;<i class="fa fa-hand-o-right text-muted" aria-hidden="true">下一篇</i></a></li>
+        </ul>
+
+    </div>
+{% endblock %}
