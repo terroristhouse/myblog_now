@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path, re_path
 from blog import views
 
+handler500 = views.page_error
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index/'),  # 首页
     path('base/', views.base, name='base/'),  # 母版
     path('crawl-<int:lid>.html', views.crawl, name='crawl/'),  # Python爬虫
-    path('article_detail-<int:sid>.html',views.article_detail,name='article_detail/'),  # 文章详情页
-    path('dream/',views.dream,name='dream/'),  # 励志名言
-    path('data/',views.data,name='data/'),  # 数据分析页面
+    path('article_detail-<int:sid>.html', views.article_detail, name='article_detail/'),  # 文章详情页
+    path('dream/', views.dream, name='dream/'),  # 励志名言
+    path('data/', views.data, name='data/'),  # 数据分析页面
 ]

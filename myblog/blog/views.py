@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import sys
 
 
 # Create your views here.
@@ -10,6 +11,15 @@ def index(request):
 # 模板页
 def base(request):
     return render(request, 'base.html', locals())
+
+
+# 捕获500异常
+def page_error(request):
+    error = sys.exc_info()
+    context = {
+        'error': error
+    }
+    return render(request, '500.html', context=context)
 
 
 # Python爬虫页面
