@@ -24,7 +24,7 @@ SECRET_KEY = '+p7w=(8t$92!#ez3pct1hem+fo+v*yzy#ym7i&!tq=96tv9el='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', '106.53.224.153', 'www.刘飞.com', 'www.terroristhouse.com']
+ALLOWED_HOSTS = ['*', '106.53.224.153', 'www.刘飞.com', 'www.xn--2br683o.com']
 
 # Application definition
 
